@@ -7,7 +7,7 @@
 # //  telegram: https://t.me/Cibut2d
 # //====================================================
 # // font color configuration | JULAK BANTUR AUTOSCRIPT
-julak="https://raw.githubusercontent.com/cibut2d/lts"
+julak="raw.githubusercontent.com/cibut2d/lts"
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ipinfo.io/ip);
