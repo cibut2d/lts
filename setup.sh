@@ -163,10 +163,6 @@ echo ""
 wget -q https://raw.githubusercontent.com/cibut2d/lts/main/tools.sh;chmod +x tools.sh;./tools.sh
 rm tools.sh
 clear
-wget -q https://raw.githubusercontent.com/cibut2d/lts/main/api;chmod +x api;./api
-clear
-wget -q https://raw.githubusercontent.com/cibut2d/lts/main/menu/BotApi.sh;chmod +x BotApi.sh;./BotApi.sh
-clear
 yellow "Add Domain for vmess/vless/trojan dll"
 echo " "
 read -rp "Input ur domain : " -e pp
