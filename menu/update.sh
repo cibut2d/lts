@@ -5,10 +5,10 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ##############################
-julak="raw.githubusercontent.com/cibut2d/tandui"
+julak="raw.githubusercontent.com/cibut2d/lts"
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/cibut2d/reg/main/ip > /root/tmp
+    curl -sS https://raw.githubusercontent.com/cibut2d/permission/main/ip > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -26,7 +26,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/cibut2d/reg/main/ip | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/cibut2d/permission/main/ip | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -43,7 +43,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/cibut2d/reg/main/ip | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/cibut2d/permission/main/ip | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -71,7 +71,7 @@ fi
 clear
 echo ""
 version=$(cat /home/ver)
-ver=$( curl sS https://raw.githubusercontent.com/cibut2d/tandui/main/versi )
+ver=$( curl sS https://raw.githubusercontent.com/cibut2d/lts/main/versi )
 clear
 # CEK UPDATE
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
@@ -79,7 +79,7 @@ Info1="${Green_font_prefix}($version)${Font_color_suffix}"
 Info2="${Green_font_prefix}(LATEST VERSION)${Font_color_suffix}"
 Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
 version=$(cat /home/ver)
-new_version=$( curl sS https://raw.githubusercontent.com/cibut2d/tandui/main/versi | grep $version )
+new_version=$( curl sS https://raw.githubusercontent.com/cibut2d/lts/main/versi | grep $version )
 #Status Version
 if [ $version = $new_version ]; then
 sts="${Info2}"
@@ -120,18 +120,32 @@ rm -rf xp
 rm -rf acs-set
 rm -rf sshws
 rm -rf status
+rm -rf menu-bckp
 rm -rf menu-backup
 rm -rf backup
 rm -rf restore
 rm -rf jam
-rm -rf cf
-rm -rf menu-bckp
-rm -rf add-ns
-rm -rf issue
+rm -rf add-vms
 rm -rf add-tru
 rm -rf add-vls
-rm -rf add-vms
 rm -rf menu-theme
+rm -rf limsh
+rm -rf limws
+rm -rf limvls
+rm -rf limtr
+rm -rf qvms
+rm -rf qvls
+rm -rf qtru
+rm -rf lock
+rm -rf unlock
+rm -rf onof
+rm -rf lock-vmess
+rm -rf xraylock
+rm -rf killtrial
+rm -rf limitssh-ip
+rm -rf lock-xray-ip
+rm -rf cekssh
+rm -rf mulog
 
 cd /usr/bin
 wget -O update "https://${julak}/main/menu/update.sh"
@@ -161,23 +175,37 @@ wget -O xp "https://${julak}/main/ssh/xp.sh"
 wget -O acs-set "https://${julak}/main/acs-set.sh"
 wget -O sshws "https://${julak}/main/ssh/sshws.sh"
 wget -O status "https://${julak}/main/status.sh"
+wget -O menu-bckp "https://${julak}/main/menu/menu-bckp.sh"
 wget -O menu-backup "https://${julak}/main/menu/menu-backup.sh"
 wget -O backup "https://${julak}/main/backup/backup.sh"
 wget -O restore "https://${julak}/main/backup/restore.sh"
 wget -O jam "https://${julak}/main/jam.sh"
-wget -O cf "https://${julak}/main/ssh/cf.sh"
-wget -O menu-bckp "https://${julak}/main/menu/menu-bckp.sh"
-wget -O add-ns "https://${julak}/main/ssh/add-ns.sh"
-wget -O issue "https://${julak}/main/ssh/julak.txt"
+wget -O add-vms "https://${julak}/main/xray/add-vms.sh"
 wget -O add-tru "https://${julak}/main/xray/add-tru.sh"
 wget -O add-vls "https://${julak}/main/xray/add-vls.sh"
-wget -O add-vms "https://${julak}/main/xray/add-vms.sh"
 wget -O menu-theme "https://${julak}/main/menu/menu-theme.sh"
+wget -O limsh "https://${julak}/main/xray/limsh.sh"
+wget -O limws "https://${julak}/main/xray/limws.sh"
+wget -O limvls "https://${julak}/main/xray/limvls.sh"
+wget -O limtr "https://${julak}/main/xray/limtr.sh"
+wget -O qvms "https://${julak}/main/xray/qvms.sh"
+wget -O qvls "https://${julak}/main/xray/qvls.sh"
+wget -O qtru "https://${julak}/main/xray/qtru.sh"
+wget -O lock "https://${julak}/main/ssh/lock.sh"
+wget -O unlock "https://${julak}/main/ssh/unlock.sh"
+wget -O onof "https://${julak}/main/xray/onof.sh"
+wget -O lock-vmess "https://${julak}/main/xray/lock-vmess.sh"
+wget -O xraylock "https://${julak}/main/xray/xraylock.sh"
+wget -O killtrial "https://${julak}/main/menu/killtrial.sh"
+wget -O limitssh-ip "https://${julak}/main/menu/limitssh-ip.sh"
+wget -O lock-xray-ip "https://${julak}/main/menu/lock-xray-ip.sh"
+wget -O cekssh "https://${julak}/main/ssh/cek.sh"
+wget -O mulog "https://${julak}/main/menu/mulog.sh"
 
 chmod +x update
-chmod +x m-ip
 chmod +x menu
 chmod +x m-bot
+chmod +x m-ip
 chmod +x menu-vmess
 chmod +x menu-vless
 chmod +x running
@@ -201,24 +229,38 @@ chmod +x xp
 chmod +x acs-set
 chmod +x sshws
 chmod +x status
+chmod +x menu-bckp
 chmod +x menu-backup
 chmod +x backup
 chmod +x restore
 chmod +x jam
-chmod +x cf
-chmod +x menu-bckp
-chmod +x add-ns
-chmod +x issue
+chmod +x add-vms
 chmod +x add-tru
 chmod +x add-vls
-chmod +x add-vms
 chmod +x menu-theme
+chmod +x limsh
+chmod +x limws
+chmod +x limvls
+chmod +x limtr
+chmod +x qvms
+chmod +x qvls
+chmod +x qtru
+chmod +x lock
+chmod +x unlock
+chmod +x onof
+chmod +x lock-vmess
+chmod +x xraylock
+chmod +x killtrial
+chmod +x limitssh-ip
+chmod +x lock-xray-ip
+chmod +x cekssh
+chmod +x mulog
 
 clear
 echo -e ""
 echo -e "\e[0;32mOhhhh yes, Ohhh No\e[0m"
 echo ""
-ver=$( curl sS https://raw.githubusercontent.com/cibut2d/tandui/main/versi )
+ver=$( curl sS https://raw.githubusercontent.com/cibut2d/lts/main/versi )
 sleep 1
 echo -e "\e[0;32mSabar Sayangku... OK!\e[0m"
 sleep 1
