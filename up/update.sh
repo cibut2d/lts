@@ -1,9 +1,9 @@
 #!/bin/bash
-cd /usr/local/
+cd /usr/local
 rm -rf sbin
 rm -rf /usr/bin/enc
 cd
-mkdir /usr/local/sbin
+mkdir /usr/bin
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 red() { echo -e "\\033[32;1m${*}\\033[0m"; }
@@ -36,11 +36,11 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-    wget --no-check-certificate https://raw.githubusercontent.com/rajaganjil93/hss/main/project5/menu.zip
+    wget --no-check-certificate https://raw.githubusercontent.com/cibut2d/lts/main/up/menu.zip
     unzip menu.zip
     chmod +x menu/*
     enc menu/*
-    mv menu/* /usr/local/sbin
+    mv menu/* /usr/bin
     rm -rf menu
     rm -rf menu.zip
     rm -rf update.sh
