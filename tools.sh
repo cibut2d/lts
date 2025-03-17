@@ -72,8 +72,6 @@ systemctl enable vnstat
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 ###Bawa ngopi dulu sanak ae###
-fi
-###Bawa ngopi dulu sanak ae###
 sudo apt install -y libnss3-dev libnspr4-dev pkg-config libpam0g-dev libcap-ng-dev libcap-ng-utils libselinux1-dev libcurl4-nss-dev flex bison make libnss3-tools libevent-dev xl2tpd pptpd
 ###Bawa ngopi dulu sanak ae###
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
