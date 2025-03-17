@@ -93,21 +93,6 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 
-coreselect=''
-cat> /root/.profile << END
-# ~/.profile: executed by Bourne-compatible login shells.
-
-if [ "$BASH" ]; then
-  if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-  fi
-fi
-
-mesg n || true
-clear
-END
-chmod 644 /root/.profile
-
 echo -e "[ ${green}INFO${NC} ] Preparing the install file"
 apt install git curl -y >/dev/null 2>&1
 apt install python -y >/dev/null 2>&1
@@ -137,6 +122,8 @@ touch /etc/xray/domain
 touch /etc/v2ray/domain
 touch /etc/lokasi/city
 touch /etc/lokasi/isp
+touch /etc/xray/city
+touch /etc/xray/isp
 mkdir -p /etc/per
 touch /etc/per/id
 touch /etc/per/token
