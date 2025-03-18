@@ -148,8 +148,8 @@ yellow "Add Domain for Ssh/xray dll"
 echo " "
 echo -e "$green      Please select a domain type below               $NC"
 echo  ""
-tyblue "     Enter your Subdomain"
-tyblue "     Use a random Subdomain"
+tyblue "    1 Enter your Subdomain"
+tyblue "    2 Use a random Subdomain"
 echo ""
 read -p "   Please select numbers 1-2 or Any Button(Random) : " host
 echo ""
@@ -267,6 +267,14 @@ sleep 3
 clear
 wget -q https://raw.githubusercontent.com/cibut2d/lts/main/ssh/bantur;chmod +x bantur;./bantur
 rm bantur
+clear
+#install menu nang tanyaman
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green       Install Menu Script               $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+sleep 2
+clear
+wget -q https://raw.githubusercontent.com/cibut2d/lts/main/up/ins-menu.sh;chmod +x ins-menu.sh;./ins-menu.sh
 clear
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
